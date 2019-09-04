@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,99 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Fibonacci" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7vL-FR-pNl">
+                                <rect key="frame" x="20" y="195" width="374" height="482"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <mutableString key="text">🔲 The Fibonacci Sequence is the series of numbers: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...  🔲 The next number is found by adding up the two numbers before it:
+▫️ The 2 is found by adding the two numbers before it (1+1)
+▫️ The 3 is found by adding the two numbers before it (1+2),
+▫️ And the 5 is (2+3),
+▫️ and so on!  🔲 For calculating enter a step and tap on squares.</mutableString>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fibonacci" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yq8-GE-v75">
+                                <rect key="frame" x="20" y="64" width="374" height="88"/>
+                                <fontDescription key="fontDescription" name="PartyLetPlain" family="Party LET" pointSize="75"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a step for calculating..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Efl-Rs-qSN">
+                                <rect key="frame" x="20" y="802" width="374" height="40"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="slX-6H-c4f"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="go"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="vbp-uc-Uge"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About Program:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I4x-Ub-oid">
+                                <rect key="frame" x="20" y="162" width="374" height="23"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="◼️⬛️◼️▪️◼️⬛️◼️▪️◼️⬛️◼️" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i4B-dx-DFW">
+                                <rect key="frame" x="80.5" y="738" width="253" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Reverse result" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJW-Q3-qT0">
+                                <rect key="frame" x="80.5" y="697" width="105.5" height="21"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="751" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ABK-se-1p3">
+                                <rect key="frame" x="284" y="692" width="51" height="31"/>
+                            </switch>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <constraints>
+                            <constraint firstItem="ABK-se-1p3" firstAttribute="trailing" secondItem="i4B-dx-DFW" secondAttribute="trailing" constant="-0.5" id="0Sw-X8-THe"/>
+                            <constraint firstItem="X2o-yA-IAq" firstAttribute="trailing" secondItem="7vL-FR-pNl" secondAttribute="trailing" constant="20" id="4Np-lv-QxR"/>
+                            <constraint firstItem="7vL-FR-pNl" firstAttribute="top" secondItem="I4x-Ub-oid" secondAttribute="bottom" constant="10" id="5yI-yU-hYX"/>
+                            <constraint firstItem="X2o-yA-IAq" firstAttribute="bottom" secondItem="Efl-Rs-qSN" secondAttribute="bottom" constant="20" id="7SO-ZA-fkJ"/>
+                            <constraint firstItem="Efl-Rs-qSN" firstAttribute="top" secondItem="i4B-dx-DFW" secondAttribute="bottom" constant="24" id="82D-sV-rB0"/>
+                            <constraint firstItem="Yq8-GE-v75" firstAttribute="leading" secondItem="X2o-yA-IAq" secondAttribute="leading" constant="20" id="AXf-Sq-3o9"/>
+                            <constraint firstItem="i4B-dx-DFW" firstAttribute="top" secondItem="lJW-Q3-qT0" secondAttribute="bottom" constant="20" id="AoF-RJ-vR2"/>
+                            <constraint firstItem="7vL-FR-pNl" firstAttribute="leading" secondItem="X2o-yA-IAq" secondAttribute="leading" constant="20" id="BGr-Vy-m0R"/>
+                            <constraint firstItem="I4x-Ub-oid" firstAttribute="trailing" secondItem="Yq8-GE-v75" secondAttribute="trailing" id="E2X-js-cib"/>
+                            <constraint firstItem="I4x-Ub-oid" firstAttribute="leading" secondItem="Efl-Rs-qSN" secondAttribute="leading" id="NZe-lD-i9k"/>
+                            <constraint firstItem="lJW-Q3-qT0" firstAttribute="leading" secondItem="i4B-dx-DFW" secondAttribute="leading" id="PYu-OP-yFk"/>
+                            <constraint firstItem="I4x-Ub-oid" firstAttribute="top" secondItem="Yq8-GE-v75" secondAttribute="bottom" constant="10" id="Srl-Dl-DRO"/>
+                            <constraint firstItem="I4x-Ub-oid" firstAttribute="leading" secondItem="Yq8-GE-v75" secondAttribute="leading" id="URU-oj-AmK"/>
+                            <constraint firstItem="Yq8-GE-v75" firstAttribute="top" secondItem="X2o-yA-IAq" secondAttribute="top" constant="20" id="cLh-yS-Ft1"/>
+                            <constraint firstItem="I4x-Ub-oid" firstAttribute="centerX" secondItem="i4B-dx-DFW" secondAttribute="centerX" id="gVj-0x-uXj"/>
+                            <constraint firstItem="X2o-yA-IAq" firstAttribute="trailing" secondItem="Yq8-GE-v75" secondAttribute="trailing" constant="20" id="gep-XU-D5M"/>
+                            <constraint firstItem="ABK-se-1p3" firstAttribute="centerY" secondItem="lJW-Q3-qT0" secondAttribute="centerY" id="j15-bU-cNu"/>
+                            <constraint firstItem="lJW-Q3-qT0" firstAttribute="top" secondItem="7vL-FR-pNl" secondAttribute="bottom" constant="20" id="lF6-mA-6Fa"/>
+                            <constraint firstItem="Efl-Rs-qSN" firstAttribute="height" secondItem="i4B-dx-DFW" secondAttribute="height" id="odI-7Q-6D7"/>
+                            <constraint firstItem="I4x-Ub-oid" firstAttribute="trailing" secondItem="Efl-Rs-qSN" secondAttribute="trailing" id="uDq-ah-AWQ"/>
+                            <constraint firstItem="ABK-se-1p3" firstAttribute="top" secondItem="7vL-FR-pNl" secondAttribute="bottom" constant="15" id="zJk-DJ-MIa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="X2o-yA-IAq"/>
                     </view>
+                    <connections>
+                        <outlet property="infoLabel" destination="I4x-Ub-oid" id="6le-uO-caJ"/>
+                        <outlet property="resultField" destination="7vL-FR-pNl" id="Qv1-dp-qqr"/>
+                        <outlet property="reverseResult" destination="ABK-se-1p3" id="eup-Mm-kMf"/>
+                        <outlet property="stepField" destination="Efl-Rs-qSN" id="HE4-07-Sgb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="130.43478260869566" y="137.94642857142856"/>
         </scene>
     </scenes>
 </document>
